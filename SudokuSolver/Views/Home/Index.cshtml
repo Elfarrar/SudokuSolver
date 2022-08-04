@@ -1,169 +1,171 @@
-﻿@model SudokuMap
+﻿@model List<int?>
 @{
     ViewData["Title"] = "Home Page";
 }
 
 
 <div class="text-center">
-    <h1 class="display-4">Sudoku</h1>
-    
-    <div class="d-flex flex-row">
-        <div class="p-1">
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[0].Value" />
-                <input type="text" class="col-3" value="@Model.Fields[1].Value" />
-                <input type="text" class="col-3" value="@Model.Fields[2].Value" />
+    <h1 class="display-4" >Sudoku</h1>
+    <form asp-action="CalculateSudoku">
+        <div class="d-flex flex-row">
+            <div class="p-1">
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[0]" value="@Model[0]" />
+                    <input type="text" class="col-3" asp-for="@Model[1]" value="@Model[1]" />
+                    <input type="text" class="col-3" asp-for="@Model[2]" value="@Model[2]" />
+                </div>
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[3]" value="@Model[3]" />
+                    <input type="text" class="col-3" asp-for="@Model[4]" value="@Model[4]" />
+                    <input type="text" class="col-3" asp-for="@Model[5]" value="@Model[5]" />
+                </div>
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[6]" value="@Model[6]" />
+                    <input type="text" class="col-3" asp-for="@Model[7]" value="@Model[7]" />
+                    <input type="text" class="col-3" asp-for="@Model[8]" value="@Model[8]" />
+                </div>
             </div>
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[3].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[4].Value" />
-                <input type="text" class="col-3" value="@Model.Fields[5].Value" />
+            <div class="p-1">
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[9]" value="@Model[9]" />
+                    <input type="text" class="col-3" asp-for="@Model[10]" value="@Model[10]"/>
+                    <input type="text" class="col-3" asp-for="@Model[11]" value="@Model[11]"/>
+                </div>
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[12]" value="@Model[12]"/>
+                    <input type="text" class="col-3" asp-for="@Model[13]" value="@Model[13]"/>
+                    <input type="text" class="col-3" asp-for="@Model[14]" value="@Model[14]"/>
+                </div>
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[15]" value="@Model[15]"/>
+                    <input type="text" class="col-3" asp-for="@Model[16]" value="@Model[16]"/>
+                    <input type="text" class="col-3" asp-for="@Model[17]" value="@Model[17]"/>
+                </div>
             </div>
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[6].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[7].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[8].Value" />
-            </div>
-        </div>
-        <div class="p-1">
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[9].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[10].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[11].Value"/>
-            </div>
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[12].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[13].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[14].Value"/>
-            </div>
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[15].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[16].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[17].Value"/>
-            </div>
-        </div>
-        <div class="p-1">
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[18].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[19].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[20].Value"/>
-            </div>
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[21].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[22].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[23].Value"/>
-            </div>
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[24].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[25].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[26].Value"/>
-            </div>
-        </div>
-    </div>
-    <div class="d-flex flex-row">
-        <div class="p-1">
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[27].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[28].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[29].Value"/>
-            </div>
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[30].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[31].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[32].Value"/>
-            </div>
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[33].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[34].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[35].Value"/>
+            <div class="p-1">
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[18]" value="@Model[18]" />
+                    <input type="text" class="col-3" asp-for="@Model[19]" value="@Model[19]"/>
+                    <input type="text" class="col-3" asp-for="@Model[20]" value="@Model[20]"/>
+                </div>
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[21]" value="@Model[21]"/>
+                    <input type="text" class="col-3" asp-for="@Model[22]" value="@Model[22]"/>
+                    <input type="text" class="col-3" asp-for="@Model[23]" value="@Model[23]"/>
+                </div>
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[24]" value="@Model[24]"/>
+                    <input type="text" class="col-3" asp-for="@Model[25]" value="@Model[25]"/>
+                    <input type="text" class="col-3" asp-for="@Model[26]" value="@Model[26]"/>
+                </div>
             </div>
         </div>
-        <div class="p-1">
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[36].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[37].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[38].Value"/>
+        <div class="d-flex flex-row">
+            <div class="p-1">
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[27]" value="@Model[27]" />
+                    <input type="text" class="col-3" asp-for="@Model[28]" value="@Model[28]"/>
+                    <input type="text" class="col-3" asp-for="@Model[29]" value="@Model[29]"/>
+                </div>
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[30]" value="@Model[30]"/>
+                    <input type="text" class="col-3" asp-for="@Model[31]" value="@Model[31]"/>
+                    <input type="text" class="col-3" asp-for="@Model[32]" value="@Model[32]"/>
+                </div>
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[33]" value="@Model[33]"/>
+                    <input type="text" class="col-3" asp-for="@Model[34]" value="@Model[34]"/>
+                    <input type="text" class="col-3" asp-for="@Model[35]" value="@Model[35]"/>
+                </div>
             </div>
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[39].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[40].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[41].Value"/>
+            <div class="p-1">
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[36]" value="@Model[36]"/>
+                    <input type="text" class="col-3" asp-for="@Model[37]" value="@Model[37]"/>
+                    <input type="text" class="col-3" asp-for="@Model[38]" value="@Model[38]"/>
+                </div>
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[39]" value="@Model[39]"/>
+                    <input type="text" class="col-3" asp-for="@Model[40]" value="@Model[40]"/>
+                    <input type="text" class="col-3" asp-for="@Model[41]" value="@Model[41]"/>
+                </div>
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[42]" value="@Model[42]"/>
+                    <input type="text" class="col-3" asp-for="@Model[43]" value="@Model[43]"/>
+                    <input type="text" class="col-3" asp-for="@Model[44]" value="@Model[44]"/>
+                </div>
             </div>
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[42].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[43].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[44].Value"/>
-            </div>
-        </div>
-        <div class="p-1">
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[45].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[46].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[47].Value"/>
-            </div>
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[48].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[49].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[50].Value"/>
-            </div>
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[51].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[52].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[53].Value"/>
-            </div>
-        </div>
-    </div>
-    <div class="d-flex flex-row">
-        <div class="p-1">
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[54].Value" />
-                <input type="text" class="col-3" value="@Model.Fields[55].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[56].Value"/>
-            </div>
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[57].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[58].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[59].Value"/>
-            </div>
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[60].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[61].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[62].Value"/>
-            </div>
-        </div>
-        <div class="p-1">
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[63].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[64].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[65].Value"/>
-            </div>
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[66].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[67].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[68].Value"/>
-            </div>
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[69].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[70].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[71].Value"/>
+            <div class="p-1">
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[45]" value="@Model[45]"/>
+                    <input type="text" class="col-3" asp-for="@Model[46]" value="@Model[46]"/>
+                    <input type="text" class="col-3" asp-for="@Model[47]" value="@Model[47]"/>
+                </div>
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[48]" value="@Model[48]"/>
+                    <input type="text" class="col-3" asp-for="@Model[49]" value="@Model[49]"/>
+                    <input type="text" class="col-3" asp-for="@Model[50]" value="@Model[50]"/>
+                </div>
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[51]" value="@Model[51]"/>
+                    <input type="text" class="col-3" asp-for="@Model[52]" value="@Model[52]"/>
+                    <input type="text" class="col-3" asp-for="@Model[53]" value="@Model[53]"/>
+                </div>
             </div>
         </div>
-        <div class="p-1">
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[72].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[73].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[74].Value"/>
+        <div class="d-flex flex-row">
+            <div class="p-1">
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[54]" value="@Model[54]" />
+                    <input type="text" class="col-3" asp-for="@Model[55]" value="@Model[55]"/>
+                    <input type="text" class="col-3" asp-for="@Model[56]" value="@Model[56]"/>
+                </div>
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[57]" value="@Model[57]"/>
+                    <input type="text" class="col-3" asp-for="@Model[58]" value="@Model[58]"/>
+                    <input type="text" class="col-3" asp-for="@Model[59]" value="@Model[59]"/>
+                </div>
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[60]" value="@Model[60]"/>
+                    <input type="text" class="col-3" asp-for="@Model[61]" value="@Model[61]"/>
+                    <input type="text" class="col-3" asp-for="@Model[62]" value="@Model[62]"/>
+                </div>
             </div>
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[75].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[76].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[77].Value"/>
+            <div class="p-1">
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[63]" value="@Model[63]"/>
+                    <input type="text" class="col-3" asp-for="@Model[64]" value="@Model[64]"/>
+                    <input type="text" class="col-3" asp-for="@Model[65]" value="@Model[65]"/>
+                </div>
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[66]" value="@Model[66]"/>
+                    <input type="text" class="col-3" asp-for="@Model[67]" value="@Model[67]"/>
+                    <input type="text" class="col-3" asp-for="@Model[68]" value="@Model[68]"/>
+                </div>
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[69]" value="@Model[69]"/>
+                    <input type="text" class="col-3" asp-for="@Model[70]" value="@Model[70]"/>
+                    <input type="text" class="col-3" asp-for="@Model[71]" value="@Model[71]"/>
+                </div>
             </div>
-            <div class="col-12">
-                <input type="text" class="col-3" value="@Model.Fields[78].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[79].Value"/>
-                <input type="text" class="col-3" value="@Model.Fields[80].Value"/>
+            <div class="p-1">
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[72]" value="@Model[72]"/>
+                    <input type="text" class="col-3" asp-for="@Model[73]" value="@Model[73]"/>
+                    <input type="text" class="col-3" asp-for="@Model[74]" value="@Model[74]"/>
+                </div>
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[75]" value="@Model[75]"/>
+                    <input type="text" class="col-3" asp-for="@Model[76]" value="@Model[76]"/>
+                    <input type="text" class="col-3" asp-for="@Model[77]" value="@Model[77]"/>
+                </div>
+                <div class="col-12">
+                    <input type="text" class="col-3" asp-for="@Model[78]" value="@Model[78]"/>
+                    <input type="text" class="col-3" asp-for="@Model[79]" value="@Model[79]"/>
+                    <input type="text" class="col-3" asp-for="@Model[80]" value="@Model[80]"/>
+                </div>
             </div>
         </div>
-    </div>
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </form>
 </div>
